@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Data.Common;
 
 namespace BubbleGumMachine
 {
@@ -43,7 +44,7 @@ namespace BubbleGumMachine
         public void FillMachine()
         {
             BubbleGums = new BubbleGum[55];
-            BalanceBubbleGameAmounts();
+            BalanceBubbleGumAmount();
             isEmpty = false;
         }
 
@@ -51,7 +52,7 @@ namespace BubbleGumMachine
         /// Balances out the colors until it reaches machine max capacity
         /// </summary>
         /// There probably is a smarter way to do this
-        private void BalanceBubbleGameAmounts()
+        private void BalanceBubbleGumAmount()
         {
             int counter = 0;
             //Green
