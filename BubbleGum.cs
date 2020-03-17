@@ -33,6 +33,10 @@ namespace BubbleGumMachine
             set { name = value; }
         }
 
+        /// <summary>
+        /// Name corresponds to what color it has.
+        /// </summary>
+        /// <param name="color"></param>
         public BubbleGum(GumColor color)
         { 
             Color = color;

@@ -4,6 +4,8 @@ using System.Text;
 
 namespace BubbleGumMachine
 {
+    //I'm not 100% sure whether or not my methods does too much, so please tell me if they do
+
     class GumMachine
     {
         bool isEmpty = false;
@@ -13,13 +15,13 @@ namespace BubbleGumMachine
 
         private BubbleGum[] bubbleGums;
 
-
         public BubbleGum[] BubbleGums
         {
             get { return bubbleGums; }
             set { bubbleGums = value; }
         }
 
+        //Singleton pattern
         private GumMachine()
         {
 
@@ -37,6 +39,7 @@ namespace BubbleGumMachine
             }
         }
 
+        //Fills the machine with bubblegum
         public void FillMachine()
         {
             BubbleGums = new BubbleGum[55];
@@ -44,6 +47,10 @@ namespace BubbleGumMachine
             isEmpty = false;
         }
 
+        /// <summary>
+        /// Balances out the colors until it reaches machine max capacity
+        /// </summary>
+        /// There probably is a smarter way to do this
         private void BalanceBubbleGameAmounts()
         {
             int counter = 0;
@@ -88,6 +95,10 @@ namespace BubbleGumMachine
 
         }
 
+        /// <summary>
+        /// Gives a random gum depending on what gums are left in the machine( <see cref="gumLeftInMachine"/>)
+        /// </summary>
+        /// <returns>returns the bubblegum you got from the machine!</returns>
         public BubbleGum GiveBubbleGum()
         {
             if (isEmpty)
@@ -109,6 +120,8 @@ namespace BubbleGumMachine
                 isEmpty = true;
                 return BubbleGums[gumLeftInMachine[0]];
             }
+
+            //Saving the gum temporarely so we don't return a null
             int index = gumLeftInMachine[rnd.Next(0, gumLeftInMachine.Count)];
             BubbleGum gum = BubbleGums[index];
             BubbleGums[index] = null;
