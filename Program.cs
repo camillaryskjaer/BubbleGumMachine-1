@@ -19,7 +19,6 @@ namespace BubbleGumMachine
         private static void Instance_EmptyMachineEvent(object sender, EventArgs e)
         {
             Console.WriteLine(sender.ToString());
-
             GumMachine.Instance.FillMachine();
         }
     }
