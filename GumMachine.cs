@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data.Common;
 
+//Kodekommentar?
 namespace BubbleGumMachine
 {
     //I'm not 100% sure whether or not my methods does too much, so please tell me if they do
@@ -22,6 +23,7 @@ namespace BubbleGumMachine
             set { bubbleGums = value; }
         }
 
+        //Fint
         //Singleton pattern
         private GumMachine()
         {
@@ -40,6 +42,7 @@ namespace BubbleGumMachine
             }
         }
 
+        //Hvorfor er denne public
         //Fills the machine with bubblegum
         public void FillMachine()
         {
